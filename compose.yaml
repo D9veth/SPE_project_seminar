@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      REFUNDS_DB_PATH: /app/data/refunds.sqlite3
+    volumes:
+      - refunds-data:/app/data
+
+volumes:
+  refunds-data:
