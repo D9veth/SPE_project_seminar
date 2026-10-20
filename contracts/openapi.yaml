@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Refund requests API
+  version: 1.0.0
+  description: API заявок на возврат денежных средств.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      operationId: health
+      summary: Проверить доступность сервиса
+      responses:
+        '200':
+          description: Сервис работает
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                additionalProperties: false
+                properties:
+                  status:
+                    type: string
+                    enum: [ok]
+  # TODO: опишите операции по требованиям из docs/requirements.md.
+  # GET /orders/{order_id}
+  # POST /refunds
+  # GET /refunds
+  # GET /refunds/{refund_id}
+  # POST /refunds/{refund_id}/approve
+  # POST /refunds/{refund_id}/reject
+components:
+  schemas: {}
+  # TODO: добавьте схемы заказов, заявок, списка и ошибок.
+  # Вынесите общие параметры и ответы, если это упростит контракт.
